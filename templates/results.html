@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for UNIQUE_ID in range(1, searchResults|length+1) %}
+<p>{{documentIndex[UNIQUE_ID]}}</p>
+{% endfor %}
+</body>
+</html>

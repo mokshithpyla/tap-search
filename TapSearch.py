@@ -8,7 +8,6 @@ Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lectus sit amet 
 
 '''
         self.documentIndex = {}
-        self.preProcessing()
         self.invertedIndex = {}
 
     def clear(self):
@@ -25,14 +24,14 @@ Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lectus sit amet 
                     self.invertedIndex[word] = [UNIQUE_ID]
                 else:
                     self.invertedIndex[word].append(UNIQUE_ID)
-        # print(self.invertedIndex)
+        print(self.invertedIndex)
 
     def search(self, word):
         if word in self.invertedIndex:
             results = self.invertedIndex[word][:10]
-            print(set(results))
-            for UNIQUE_ID in set(results):
-                print(word, ' found in', self.documentIndex[UNIQUE_ID])
+            # print(set(results))
+            return set(results)
+
 
     def preProcessing(self):
 
@@ -44,7 +43,7 @@ Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lectus sit amet 
 
 
 if __name__ == '__main__':
-    TS = TapSearch()
-    TS.index()
-    TS.search('lorem')
-    TS.clear()
+    ts = TapSearch()
+    ts.index()
+    ts.search('lorem')
+    ts.clear()
