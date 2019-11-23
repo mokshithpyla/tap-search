@@ -1,6 +1,6 @@
 # TapSearch
 
-A simple program called TapSearch using which you may search a word within a set of documents to retrieve the top 10 paragraphs in which the word is present
+A simple program called TapSearch using which you may search a word within a set of documents to retrieve the top 10 paragraphs in which the word is present. You may access the deployed app here: https://search-tap.herokuapp.com/
 
 ## Using TapSearch
 ### Providing Input Text
