@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Not Found</title>
+    <style>
+        .container {
+            background-color: #fff;
+            margin: auto;
+            text-align: center;
+        }
+        @media only screen and (min-width: 768px){
+            .container {
+            background-color: #fff;
+            margin: auto;
+            text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 align="center">The Word "{{searchWord}}" is not present in the Input Text you submitted. </h2>
+    <h2 align="center"> <a href="{{ url_for('submit_input')}}"> Update Input Text </a> </h2>
+</div>
+</body>
+</html>

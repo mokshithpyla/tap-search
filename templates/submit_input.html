@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TapSearch</title>
+    <style>
+            .container {
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+                textarea {
+            width: 50%;
+            height: auto;
+            overflow: auto;
+            }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>TapSearch</h1>
+    <form method="post" action="/search">
+        <h2>Provide Input Text:</h2>
+    <textarea name="documents" rows="40" cols="20" placeholder="Enter The Documents separated by two new lines" required></textarea>
+        <div style='padding-left:20px; padding-bottom: 10px'>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -3,13 +3,12 @@ app = Flask(__name__)
 from flask import render_template, request
 from TapSearch import TapSearch
 ts = TapSearch()
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    """
-        Renders Home Page
-    """
 
-    return render_template('index.html')
+
+@app.route('/', methods=['GET', 'POST'])
+def submit_input():
+    ts.clear()
+    return render_template('submit_input.html')
 
 
 @app.route('/search', methods=['GET', 'POST'])
@@ -19,11 +18,10 @@ def search():
     # Removing default extra spaces : \r from using TextArea tag
     inputText = inputText.replace('\r', '')
 
-    print(inputText)
     ts.documents = inputText
     ts.preProcessing()
     ts.index()
-    print(ts.documents)
+
     return render_template('search.html')
 
 
@@ -32,7 +30,12 @@ def results():
     searchWord = request.form['search_word']
     searchResults = ts.search(searchWord.lower())
     print(searchResults)
-    return render_template('results.html', searchResults=searchResults, documentIndex=ts.documentIndex)
+    if searchResults:
+        return render_template('results.html', searchResults=searchResults, documentIndex=ts.documentIndex, searchWord=searchWord)
+    else:
+        return render_template('not_found.html', searchWord=searchWord)
+
+
 if __name__ == '__main__':
     app.run()
 

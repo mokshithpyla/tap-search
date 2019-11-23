@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            margin: auto;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+<h1>TapSearch</h1>
+{% for UNIQUE_ID in searchResults %}
 
-{% for UNIQUE_ID in range(1, searchResults|length+1) %}
-<p>{{documentIndex[UNIQUE_ID]}}</p>
+<a href="#" onclick="myFunction()">{{searchWord}} - Document #{{UNIQUE_ID}}</a>
+<p style="text-align: justify">{{documentIndex[UNIQUE_ID]}}</p>
 {% endfor %}
+</div>
 </body>
 </html>

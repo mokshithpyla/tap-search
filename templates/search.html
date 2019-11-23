@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>TapSearch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        input[type=text] {
+          margin: auto;
+          padding: 6px;
+          border: none;
+          font-size: 17px;
+}
+        .search-container {
+  margin: auto;
+}
+        .search-container button {
+  margin: auto;
+  padding: 6px 10px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+    </style>
 </head>
 <body>
-<form method="post" action="/results">
-    <input type="text" name="search_word" placeholder="Search...">
-    <input type="submit" value="submit">
-</form>
+<div style="margin:auto; text-align: center;">
+    <h1>TapSearch</h1>
+    <form method="post" action="/results">
+        <input type="text" name="search_word" placeholder="Search..." required>
+        <div style='padding-left:30px; padding: 5px'>
+            <input type="submit" value="TapSearch">
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
