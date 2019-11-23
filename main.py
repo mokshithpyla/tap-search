@@ -21,7 +21,7 @@ def search():
     ts.documents = inputText
     ts.preProcessing()
     ts.index()
-
+    print(ts.documentIndex)
     return render_template('search.html')
 
 
@@ -29,6 +29,8 @@ def search():
 def results():
     searchWord = request.form['search_word']
     searchResults = ts.search(searchWord.lower())
+    searchResults.sort()
+    print(ts.invertedIndex)
     print(searchResults)
     if searchResults:
         return render_template('results.html', searchResults=searchResults, documentIndex=ts.documentIndex, searchWord=searchWord)

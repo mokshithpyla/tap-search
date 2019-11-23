@@ -31,7 +31,7 @@ Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lectus sit amet 
     def search(self, word):
         if word in self.invertedIndex:
             results = set(self.invertedIndex[word])
-            return list(results)[:10].sort()
+            return list(results)[:10]
 
     # Pre - processes the user submission to index each paragraph as a separate document.
     def preProcessing(self):
