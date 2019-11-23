@@ -29,6 +29,7 @@ def search():
 def results():
     searchWord = request.form['search_word']
     searchResults = ts.search(searchWord.lower())
+    print(searchResults)
     if searchResults:
         searchResults.sort()
         return render_template('results.html', searchResults=searchResults, documentIndex=ts.documentIndex, searchWord=searchWord)

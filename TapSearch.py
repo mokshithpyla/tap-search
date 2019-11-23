@@ -29,8 +29,10 @@ Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Lectus sit amet 
 
     # Searches for given word in retrieves the top 10 paragraphs (Documents) that contain it
     def search(self, word):
+        print(self.invertedIndex)
         if word in self.invertedIndex:
             results = set(self.invertedIndex[word])
+            print(results)
             return list(results)[:10]
 
     # Pre - processes the user submission to index each paragraph as a separate document.
